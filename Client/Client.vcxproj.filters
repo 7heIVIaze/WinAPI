@@ -29,6 +29,18 @@
     <Filter Include="Engine\03. Manager\TimeManager">
       <UniqueIdentifier>{e0e09f3c-3976-4071-9c5f-462d63f6629a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05. Scene">
+      <UniqueIdentifier>{cf95f84a-7c45-4cc7-8a7a-49208a01f390}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\SceneManager">
+      <UniqueIdentifier>{686789a0-07ac-4452-af7f-7d3eafbb6a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\Scene_Start">
+      <UniqueIdentifier>{f88be300-2094-47dc-98ea-4bf6de9c0a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\Scene_Tool">
+      <UniqueIdentifier>{63dcf242-0d88-434e-8e5d-15dada9b18d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -62,6 +74,15 @@
     <ClInclude Include="CTimeManager.h">
       <Filter>Engine\03. Manager\TimeManager</Filter>
     </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Engine\05. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneManager.h">
+      <Filter>Engine\03. Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene_Start.h">
+      <Filter>Engine\05. Scene\Scene_Start</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCore.cpp">
@@ -78,6 +99,15 @@
     </ClCompile>
     <ClCompile Include="CTimeManager.cpp">
       <Filter>Engine\03. Manager\TimeManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Engine\05. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneManager.cpp">
+      <Filter>Engine\03. Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene_Start.cpp">
+      <Filter>Engine\05. Scene\Scene_Start</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

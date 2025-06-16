@@ -15,8 +15,12 @@ public:
 	Vector2 GetScale() { return m_vScale; }
 
 public:
+	void update();
+	void render(HDC _dc);
+
+public:
 	CObject();
-	~CObject();
+	virtual ~CObject(); // 부모 클래스이기 때문에 가상 함수로 설정해야 함.
 
 
 };

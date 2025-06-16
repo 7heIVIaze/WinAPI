@@ -3,9 +3,7 @@
 #include "CObject.h"
 #include "CTimeManager.h"
 #include "CKeyManager.h"
-
-CObject g_obj;
-
+#include "CSceneManager.h"
 
 CCore::CCore()
 	: m_hWnd(0)
@@ -48,9 +46,7 @@ int CCore::init(HWND _hWnd, POINT _ptResolution)
 	// Manager 초기화
 	CTimeManager::GetInst()->init();
 	CKeyManager::GetInst()->init();
-
-	g_obj.SetPos(Vector2((float)(m_ptResolution.x / 2), (float)(m_ptResolution.y / 2)));
-	g_obj.SetScale(Vector2(100, 100));
+	CSceneManager::GetInst()->init();
 
 	return S_OK;
 }
@@ -59,45 +55,18 @@ void CCore::progress()
 {
 	// Manager Update
 	CTimeManager::GetInst()->update();
-
 	CKeyManager::GetInst()->update();
 
-	update();
+	CSceneManager::GetInst()->update();
 
-	render();
-}
-
-void CCore::update()
-{
-	Vector2 vPos = g_obj.GetPos();
-	if (CKeyManager::GetInst()->GetKeyState(KEY::LEFT) == KEY_STATE::TAP)
-	{
-		vPos.x -= 200.0f;// *fDeltaTime;
-	}
-
-	if (CKeyManager::GetInst()->GetKeyState(KEY::RIGHT) == KEY_STATE::TAP)
-	{
-		vPos.x += 200.0f;// *fDeltaTime;
-	}
-
-	g_obj.SetPos(vPos);
-}
-
-void CCore::render()
-{
+	// ==============
+	// rendering
+	// =============
 	// 화면 Clear
-
 	Rectangle(m_memDC, -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
 
-
 	// 그리기
-	Vector2 vPos = g_obj.GetPos();
-	Vector2 vScale = g_obj.GetScale();
-
-	Rectangle(m_memDC, int(vPos.x - vScale.x / 2.f),
-		int(vPos.y - vScale.y / 2.f),
-		int(vPos.x + vScale.x / 2.f),
-		int(vPos.y + vScale.y / 2.f));
+	CSceneManager::GetInst()->render(m_memDC);
 
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY); // 프레임 방어가 잘 되고 있는 거임.
 }
