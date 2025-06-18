@@ -13,6 +13,11 @@
 #define fDeltaTime CTimeManager::GetInst()->GetfDeltaTime()
 #define DeltaTime CTimeManager::GetInst()->GetDeltaTime()
 
+#define KEY_CHECK(key, state) CKeyManager::GetInst()->GetKeyState(key) == state
+#define KEY_HOLD(key) KEY_CHECK(key, KEY_STATE::HOLD)
+#define KEY_TAP(key) KEY_CHECK(key, KEY_STATE::TAP)
+
+
 
 enum class GROUP_TYPE
 {

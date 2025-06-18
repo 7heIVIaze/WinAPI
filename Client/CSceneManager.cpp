@@ -28,8 +28,11 @@ void CSceneManager::init()
 	m_arrScene[(UINT)SCENE_TYPE::START]->SetName(L"Start Scene");
 
 	//m_arrScene[(UINT)SCENE_TYPE::TOOL] = new CScene_TOOL;
+	//m_arrScene[(UINT)SCENE_TYPE::TOOL]->SetName(L"Tool Scene");
 	//m_arrScene[(UINT)SCENE_TYPE::STAGE_01] = new CScene_Stage01;
+	//m_arrScene[(UINT)SCENE_TYPE::STAGE_01]->SetName(L"Stage1 Scene");
 	//m_arrScene[(UINT)SCENE_TYPE::STAGE_02] = new CScene_Stage02;
+	//m_arrScene[(UINT)SCENE_TYPE::STAGE_02]->SetName(L"Stage2 Scene");
 
 	// 현재 씬 설정
 	m_pCurScene = m_arrScene[(UINT)SCENE_TYPE::START];

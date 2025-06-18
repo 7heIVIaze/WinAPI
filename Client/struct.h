@@ -6,6 +6,13 @@ struct Vector2
 	float y;
 
 public:
+	Vector2& operator= (POINT _pt)
+	{
+		x = (float)_pt.x;
+		y = (float)_pt.y;
+	}
+
+public:
 	Vector2()
 		: x(0.0f)
 		, y(0.0f)
@@ -20,4 +27,11 @@ public:
 		: x((float)_x)
 		, y((float)_y)
 	{ }
+
+	Vector2(POINT _pt)
+		: x((float)_pt.x)
+		, y((float)_pt.y)
+	{
+
+	}
 };
