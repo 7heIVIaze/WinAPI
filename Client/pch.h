@@ -11,5 +11,9 @@ using std::vector;
 using std::string;
 using std::wstring;
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+#include <assert.h>
+
 #include "define.h"
 #include "struct.h"

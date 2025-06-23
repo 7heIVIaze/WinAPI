@@ -18,7 +18,6 @@
 #define KEY_TAP(key) KEY_CHECK(key, KEY_STATE::TAP)
 
 
-
 enum class GROUP_TYPE
 {
 	DEFAULT,	// 0

@@ -3,9 +3,10 @@
 #include "CTimeManager.h"
 
 CMissile::CMissile()
-	: m_fDirection(1.0f)
+	: m_fTheta(M_PI / 4.0f)
+	, m_vDir(Vector2(1.0f, 1.0f))
 {
-
+	m_vDir.Normalize();
 }
 
 CMissile::~CMissile()
@@ -16,7 +17,11 @@ void CMissile::update()
 {
 	Vector2 vPos = GetPos();
 
-	vPos.y += 600.0f * fDeltaTime * m_fDirection;
+	/*vPos.x += 600.0f * cosf(m_fTheta) * fDeltaTime;
+	vPos.y -= 600.0f * sinf(m_fTheta) * fDeltaTime;*/
+
+	vPos.x += 600.0f * m_vDir.x * fDeltaTime;
+	vPos.y += 600.0f * m_vDir.y * fDeltaTime;
 
 	SetPos(vPos);
 }

@@ -6,6 +6,24 @@ struct Vector2
 	float y;
 
 public:
+	float Length()
+	{
+		return sqrt(x* x + y * y);
+	}
+
+	Vector2& Normalize()
+	{
+		float fLen = Length();
+
+		assert(fLen != 0);
+
+		x /= fLen;
+		y /= fLen;
+
+		return *this;
+	}
+
+public:
 	Vector2& operator= (POINT _pt)
 	{
 		x = (float)_pt.x;

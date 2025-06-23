@@ -4,19 +4,14 @@
 class CMissile : public CObject
 {
 private:
-	float m_fDirection;
-
+	float m_fTheta; // 이동 방향(각도)
+	Vector2 m_vDir;
 public:
-	void SetDirection(bool _bUp)
-	{
-		if (_bUp)
-		{
-			m_fDirection = -1.0f;
-		}
-		else
-		{
-			m_fDirection = 1.0f;
-		}
+	void SetDirection(float _fTheta) { m_fTheta = _fTheta; }
+	void SetDirection(Vector2 _vDir) 
+	{ 
+		m_vDir = _vDir; 
+		m_vDir.Normalize();
 	}
 
 public:
